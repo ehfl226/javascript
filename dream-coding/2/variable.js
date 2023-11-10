@@ -3,7 +3,8 @@
     // use this for Valina Javascript.
     'use strict'; 
 
-    // 2. Variable (변수 : 변할 수 있는 수, 변수는 값을 저장하고 참조하기 위해 사용한다.)
+    // 2. Variable, rw(read/write - 메모리에 읽고 쓰기가 가능)
+    // (변수 : 변할 수 있는 수, 변수는 값을 저장하고 참조하기 위해 사용한다.)
     // let (added in ES6) : javascript에서 변수를 만들 때 쓰는 키워드
 
     let x; // 변수의 선언
@@ -38,7 +39,8 @@
 
     // var의 여러 단점들로 인해 let을 씀
 
-    // 3. Constants (한 번 할당하면 const 설정한 값 절대 변경 불가, 재정의가 불가능한 변환되지 않는 값을 말한다.)
+    // 3. Constants, r(read only) (한 번 할당하면 const 설정한 값 절대 변경 불가, 재정의가 불가능한 변환되지 않는 값을 말한다.)
+    // (읽기만 가능, const를 선언하고 값을 할당하면 자물쇠가 생겨서 읽기만 가능하고 다시 다른 값으로 쓰는 것이 불가능하다.)
     //  <-> (값이 계속 변경될 수 있는 것을 Mutable data type > let 키워드를 통해 선언한 변수)
     //      favor inmmutable data type always for a few reasons:
     //     - security (보안상의 이유 : 설정값을 변경 할 수 없기 때문)
