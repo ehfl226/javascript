@@ -24,3 +24,12 @@ console.log('Cat' || 'Dog'); // 'Cat'
 console.log('Cat' || 'Dog'); // 'Cat'
 console.log(false || 'Dog'); // 'Dog'
 console.log('Cat' || false); // 'Cat'
+
+// 이처럼 논리 연산의 결과를 결정하는 피연산자를 타입 변환하지 않고 그대로 반환한다.
+// 이를 단축 평가라 한다. 단축 평갸는 표현식을 평가하는 도중에 평가 결과가 확정된 경우 나머지 평가 과정을 생략하는 것을 말한다.
+
+// 단축 평가 표현식          평가 결과  
+// true  || anything       true
+// false || anything     anything
+// true  && anything     anything
+// false && anything      false
