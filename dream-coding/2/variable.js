@@ -48,13 +48,17 @@
     // 3. Constant, r(read only - 메모리에 값을 읽기만 가능) (한 번 할당하면 const 설정한 값 절대 변경 불가, 재정의가 불가능한 변환되지 않는 값을 말한다.)
     // (읽기만 가능, const를 선언하고 값을 할당하면 자물쇠가 생겨서 읽기만 가능하고 다시 다른 값으로 쓰는 것이 불가능하다.)
     // const(Immutable data type) <-> (값이 계속 변경될 수 있는 것을 Mutable data type > let 키워드를 통해 선언한 변수)
+    const daysInWeek = 7;
+    const maxNumber = 5;
+    
+    // Note!             // yoon string 정의하게 되면 통채로 메모리에 올렸다가 다른 string으로 변경이 가능하지, 이름을 바꾸는 데이터 자체를 변경하는것은 불가능
+    // Immutable data type: primitive type, frozen objects (i.e. object.freeze())
+    // Mutable date types: all objects by default are mutable in JS
     //      favor inmmutable data type always for a few reasons:
     //     - security (보안상의 이유 : 설정값을 변경 할 수 없기 때문)
     //     - thread safety (다양한 쓰레드들이 동시에 값을 변경할 수 있는데 위험성이 있음.)
     //     - reduce human mistakes (개발자의 실수들을 방지한다. 앞으로 변경될 이유 없다면 const를 사용해서 프로그램 작성)
-    const daysInWeek = 7;
-    const maxNumber = 5;
-    
+  
 
 
     // 4. Variable types (메모리에 변수가 저장되는 방식은 두 가지가 있다. primitive (더이상 작은 단위로 나누어질 수 없는 single item), object (single item 여러개를 묶어서 한 박스로 관리할 수 있도록 해줌.))
@@ -123,7 +127,7 @@
     yoon.age = 30; // yoon안에 name, age 메모리에는 다른 값으로 변경 가능
 
 
-    
+
     // 5. Dynamic typing: dynamically typed language (변수를 선언할때 어떤 type인지 선언하지않고 프로그램이 동작할 때(런타임) 할당된 값에 따라서 type이 변경된다.)
     let text = 'hello';
     console.log(text.charAt(0)); // h
