@@ -97,8 +97,8 @@ class Shape {
     this.color = color;
   }
 
-  draw() {
-    console.log(`drawing ${this.color} color !`);
+  draw() { // method
+    console.log(`drawing ${this.color} color !`); //  상속을 이용하면 한 곳에서만 수정하면 모두 동일하게 수정됨
   }
 
   getArea() {
@@ -106,13 +106,15 @@ class Shape {
   }
 }
 
-class Rectangle extends Shape {}
+// extends라는 키워드를 이용해서 Shape을 연장한다.
+// 이렇게만 정의해도 Shape에서 정의한 fields와 method가 자동으로 Rectangle에 포함된다.
+class Rectangle extends Shape {} 
 class Triangle extends Shape {
   draw() {
-    super.draw();
+    super.draw(); // 부모의 메소드 호출!
     console.log('🔺');
   }
-  getArea() {
+  getArea() { // 재정의해서 사용할 수 있다.(오버라이딩)
     return (this.width * this.heigth) / 2;
   }
 
@@ -122,19 +124,18 @@ class Triangle extends Shape {
   }
 }
 
-const rectangle = new Rectangle(20, 20, 'blue');
-rectangle.draw();
-console.log(rectangle.getArea());
-const Triangle = new Triangle(20, 20, 'red');
+const rectangle = new Rectangle(20, 20, 'blue'); // drawing blue color !
+rectangle.draw(); // rectangle에 있는 draw() 함수 호출
+console.log(rectangle.getArea()); // 400
+const Triangle = new Triangle(20, 20, 'red'); // 다양성으로 필요한 함수만 재정의 
 triangle.draw();
-console.log(triangle.getArea());
+console.log(triangle.getArea()); // 200
 
 
-// 6. Class checking: instanceeOf
-console.log(rectangle instanceof Rectangle);
-console.log(triangle instanceof Rectangle);
-console.log(triangle instanceof Triangle);
-console.log(triangle instanceof Shape);
-console.log(triangle instanceof Object);
-console.log(triangle.toString());
-console.log(triangle instanceof Rectangle);
+// 6. Class checking: instanceeOf (왼쪽 object가 오른쪽 class를 이용해서 만들었는지 t/f로 확인)
+console.log(rectangle instanceof Rectangle); // t
+console.log(triangle instanceof Rectangle); // f
+console.log(triangle instanceof Triangle); // t
+console.log(triangle instanceof Shape); // t :Shape을 상속!
+console.log(triangle instanceof Object); // t :모든 bject는 Object를 상속 
+console.log(triangle.toString()); // [object Object]
