@@ -1,26 +1,26 @@
 'use strict';
 // Object-oriendted programming 
-// class: template
-// object: instance of a class
+// class: template(데이터가 들어있지 않고 붕어빵틀만! 한 번만 선언!)
+// object: instance of a class(데이터를 넣으면 붕어빵!)
 // JavaScript classes
 // - introduced in ES6
 // - syntactical sugar over prototype-based inheritance
 
 //1. Class declarations
-class Person {
+class Person { // * class안에
     // constructor
     constructor(name, age) { // 생성자를 만들어
-        // fields
+        // * fields(속성)
         this.name = name; // 전달된 데이터에 할당
         this.age = age;
     }
 
-    // methods
+    // * methods(행동)
     speak() {       // this : 생성된 object.name = yoon
         console.log(`${this.name}: hello!`);
     }
 }
-
+// 새로운 object만들때 new라는 키워드 생성
 const yoon = new Person('yoon', 30); // 새로운 object 만들기
 console.log(yoon.name);
 console.log(yoon.age);
@@ -119,8 +119,8 @@ class Triangle extends Shape {
   }
 
 
-  toString() {
-    return `Triangle: color: ${this.color}`;
+  toString() { // object에 있는 toString 함수 출력
+    return `Triangle: color: ${this.color}`; // Triangle: color: red
   }
 }
 
