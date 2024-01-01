@@ -2,7 +2,7 @@
 // one of the JsvaScript's data types.
 // a collection of related data and/or functionality.
 // Nearly all objects in JavaScript are instances of Object
-// object = { key : value };
+// object = { key : value }; (키 : 접근할 수 있는 변수(프로퍼티)와 그 프로퍼티가 가지고 있는 값)
 
 // 1. Literals and properties
 const obj1 = {}; // 'object literal" syntax
@@ -30,3 +30,17 @@ print(yoon); // 3. 전달할때도 yoon만 호출한다.
 // with JavaScript magic(dynamically typed language)
 // 동적으로 type이 Runtime때 결정되는 언어
 // can add properties later
+yoon.hasJob = true;
+console.log(yoon.hasJob);
+
+// can delete properties later
+delete yoon.hasJob;
+console.log(yoon.hasJob);
+
+
+// 2. Computed properties
+// key should be always string
+console.log(yoon.name); // 코딩하는 순간 키에 해당하는 값을 받아올때
+console.log(yoon['name']); // 어떤 키가 필요한지 모를 때, 런타임때 결정
+yoon['hasJob'] = true; 
+console.log(yoon.hasJob);
